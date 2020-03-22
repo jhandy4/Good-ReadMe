@@ -33,11 +33,10 @@ function promptUser() {
       name: "license",
       message: "Pick a license!",
       choices: [" ",
-      `[![MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`,
-      `[![ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`,
-      `[![WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)`,
-    
-       ] },
+      `<img src = https://img.shields.io/badge/License-MIT-yellow.svg>`,
+      `<img src = https://img.shields.io/badge/License-ISC-blue.svg>`,
+      `<img src = https://img.shields.io/badge/License-WTFPL-brightgreen.svg>`
+    ]},
     {
       type: "list",
       name: "credits",
@@ -62,6 +61,12 @@ function promptUser() {
       name: "questions",
       message: "For questions...",
       choices: [" ", "Email me at jhandy4@gmail.com"]
+    },
+    {
+      type: "checkbox",
+      name: "avatar",
+      message: "Do you want to include an avatar?",
+      choices: [" ", `<img src = "https://avatars0.githubusercontent.com/u/58635628?s=460&amp;u=74271d5cc9ef31824e6f94f1cbe266d3b4130f97&amp;v=4">`]
     },
     ]);
 }
@@ -98,6 +103,9 @@ function generateHTML(answers) {
           <p>${answers.tests}</p>
         <li class="list-group-item text-light bg-dark font-italic">Questions</li>
           <p>${answers.questions}</p>
+        <li class="list-group-item text-light bg-dark font-italic">Avatar</li>
+          <p>${answers.avatar}</p>
+          
           
       </ul>
     </div>
@@ -124,11 +132,6 @@ init();
 
 
 // To Do List!!!!!!!!
-
-// Fix badges
-
-// Avatar from node modules
-// ${github.avatar_url}
 
 // screencastify some gifs
 
